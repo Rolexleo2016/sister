@@ -1,0 +1,162 @@
+/* Reset */
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden;
+}
+
+/* Sections */
+section {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+/* Show active section */
+section.active {
+  display: flex;
+}
+
+/* Landing Section Background */
+#landing {
+  background: url('C:/Users/Victus/Desktop/letter/sister/lbg.jpeg') no-repeat center center;
+  background-size: cover;
+}
+
+/* Envelope Look (Landing Letter) */
+.letter {
+  width: 500px;
+  height: 300px;
+  background: linear-gradient(to top right, #fff 50%, #e4d0c0 50%);
+  border: 4px solid #c2a477;
+  border-radius: 8px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  position: relative;
+  cursor: pointer;
+  animation: breathe 3s ease-in-out infinite, float 6s ease-in-out infinite;
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+/* Letter Hover Effects */
+.letter:hover {
+  transform: rotate(-3deg) scale(1.05);
+  box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+}
+
+/* Text inside the letter */
+.letter h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.4rem;
+  color: #5a4637;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+  animation: glowText 2s ease-in-out infinite alternate;
+}
+
+/* Full Letter Content Section */
+#letter-content {
+  background: url('C:/Users/Victus/Desktop/letter/sister/bg.jpeg') no-repeat center center;
+  background-size: cover;
+  animation: fadeIn 1.5s ease forwards;
+  opacity: 0;
+}
+
+/* Show full letter */
+#letter-content.active {
+  opacity: 1;
+}
+
+/* Inner Content */
+.content {
+  background: rgba(255, 255, 255, 0.8);
+  padding: 40px;
+  border-radius: 10px;
+  max-width: 700px;
+  margin: 20px;
+  font-family: 'Dancing Script', 'Playfair Display', cursive;
+  font-size: 1.7rem;
+  color: #5a4637;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+  animation: zoomIn 1s ease;
+  text-align: center;
+}
+
+/* Animations */
+
+/* Breathe Animation */
+@keyframes breathe {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.03);
+  }
+}
+
+/* Floating Animation */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Text Glow Animation */
+@keyframes glowText {
+  from {
+    opacity: 0.7;
+    text-shadow: 0 0 5px #e0c7a0, 0 0 10px #e0c7a0;
+  }
+  to {
+    opacity: 1;
+    text-shadow: 0 0 8px #d4b483, 0 0 15px #d4b483;
+  }
+}
+
+/* Fade-in Animation */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Zoom-in Animation */
+@keyframes zoomIn {
+  0% {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Responsive for Mobile */
+@media (max-width: 768px) {
+  .content {
+    padding: 20px;
+    font-size: 1.3rem;
+    max-width: 90%;
+  }
+
+  .letter {
+    padding: 30px;
+    font-size: 1.2rem;
+  }
+}
